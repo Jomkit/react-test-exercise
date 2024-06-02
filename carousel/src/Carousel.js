@@ -25,24 +25,36 @@ import Card from "./Card";
     setCurrCardIdx(currCardIdx + 1);
   }
 
+  //Fixes Bug 1: add a goBackward() function for leftArrow
+  //Decrements currCardIdx state by 1
+  function goBackward(){
+    setCurrCardIdx(currCardIdx - 1);
+  }
+
   return (
     <div className="Carousel">
       <h1>{title}</h1>
       <div className="Carousel-main">
-        <i
+        {/* Fixes bug 2 */}
+        { currCardIdx===0 ? null : <i
           className="bi bi-arrow-left-circle"
-          onClick={goForward}
-        />
+          onClick={goBackward}
+        />}
+        
         <Card
           caption={currCard.caption}
           src={currCard.src}
           currNum={currCardIdx + 1}
           totalNum={total}
         />
-        <i
-          className="bi bi-arrow-right-circle"
-          onClick={goForward}
-        />
+        {/* Fixes bug 2 */}
+        { currCardIdx === total-1 ? 
+          null : 
+          <i
+            className="bi bi-arrow-right-circle"
+            onClick={goForward}
+          />
+        }
       </div>
     </div>
   );
