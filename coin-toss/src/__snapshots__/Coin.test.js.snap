@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot heads 1`] = `
+<DocumentFragment>
+  <div>
+    <img
+      alt="heads"
+      src="heads.jpg"
+      style="width: 200px;"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`matches snapshot tails 1`] = `
+<DocumentFragment>
+  <div>
+    <img
+      alt="tails"
+      src="tails.jpg"
+      style="width: 200px;"
+    />
+  </div>
+</DocumentFragment>
+`;
